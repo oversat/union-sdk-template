@@ -8,9 +8,10 @@ import { connector } from "../context/connectors-setup";
 // Currently supported wallets are:
 // Metamask, Torus, Walletlink, Mew, Beacon, Fcl
 
-function MyApp({ Component, pageProps }: AppProps) {
+function AiApp({ Component, pageProps }: AppProps) {
   return (
-    <SdkWalletConnector connector={connector} desiredWallets={["beacon"]}>
+    <SdkWalletConnector 
+    connector={connector} desiredWallets={["fcl"]}>
       {(sdk, wallet, connection) => {
         return (
           <SDKContext.Provider value={{ sdk, wallet, connection }}>
@@ -22,4 +23,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default AiApp;
